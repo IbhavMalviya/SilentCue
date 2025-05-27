@@ -1,0 +1,8 @@
+pycache/
+*.pyc
+*.ipynb_checkpoints
+data/
+models/
+.env
+.vscode/
+.DS_Store
