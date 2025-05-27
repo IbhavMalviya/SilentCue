@@ -46,11 +46,17 @@ Add more commands and language support
 ---
 ## 🚧 Progress So Far
 
+27/05/25
 - Set up webcam capture using OpenCV.
 - Integrated MediaPipe Face Mesh to detect 468 facial landmarks in real-time.
 - Successfully displayed live face landmark points on webcam feed.
 - Fixed common issues like color space conversion (BGR to RGB) and key event handling.
+
+**But processing the entire 468 face landmarks in real-time will be a heavy computational task. Thus we will only extract the mouth region to extract dataset.**
 - Ready to extract and save the mouth region for lip-reading dataset collection.
+
+
+
 
 ---
 
