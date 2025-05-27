@@ -55,7 +55,8 @@ Add more commands and language support
 **But processing the entire 468 face landmarks in real-time will be a heavy computational task. Thus we will only extract the mouth region to extract dataset.**
 - Ready to extract and save the mouth region for lip-reading dataset collection.
 
-
+**Why extact do we need only mouth frame?**
+We need only the mouth region to feed into the model — not the full face as that would be waste of resources.
 
 
 ---

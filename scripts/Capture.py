@@ -25,10 +25,41 @@ while cap.isOpened():
 
         if results.multi_face_landmarks:
             for face_landmarks in results.multi_face_landmarks: 
-                for id, lm in enumerate(face_landmarks.landmark):
-                    h,w, _ = frame.shape                                           # Drawing Landmarks
-                    x,y= int(lm.x*w), int (lm.y*h)
-                    cv2.circle(frame,(x,y),1,(0,255,0),-1)
+                # Mouth landmark indices from MediaPipe
+                    full_lip_indices = [
+                    61, 185, 40, 39, 37, 0, 267, 269, 270, 409, 291,
+                    146, 91, 181, 84, 17, 314, 405, 321, 375, 291,
+                    308, 324, 318, 402, 317, 14, 87, 178, 88, 95, 78
+                    ]
+
+
+                    h, w, _ = frame.shape
+                    lip_points = []
+                    for idx in full_lip_indices:
+                            lm = face_landmarks.landmark[idx]
+                            x, y = int(lm.x * w), int(lm.y * h)
+                            lip_points.append((x, y))
+                            cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)  # Optional: draw dots
+
+                   
+
+                    # Compute bounding box of mouth
+                    xs, ys = zip(*lip_points)
+                    min_x, max_x = min(xs), max(xs)
+                    min_y, max_y = min(ys), max(ys)
+
+                    # Add padding
+                    padding = 10
+                    min_x = max(0, min_x - padding)
+                    max_x = min(w, max_x + padding)
+                    min_y = max(0, min_y - padding)
+                    max_y = min(h, max_y + padding)
+
+                    # Crop mouth region
+                    mouth_roi = frame[min_y:max_y, min_x:max_x]
+
+                    # Show mouth region in a separate window
+        cv2.imshow("Mouth Region", mouth_roi)
 
 
         cv2.imshow('SilentCue - Face Landmarks', frame)                         # Showing Result
