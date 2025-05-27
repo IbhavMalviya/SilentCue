@@ -44,7 +44,18 @@ Mobile app integration
 Add more commands and language support
 
 ---
+## 🚧 Progress So Far
+
+- Set up webcam capture using OpenCV.
+- Integrated MediaPipe Face Mesh to detect 468 facial landmarks in real-time.
+- Successfully displayed live face landmark points on webcam feed.
+- Fixed common issues like color space conversion (BGR to RGB) and key event handling.
+- Ready to extract and save the mouth region for lip-reading dataset collection.
+
+---
+
 
 🧑‍💻 Author
 Made with ❤️ by Ibhav Malviya
 🌐 GitHub: https://github.com/IbhavMalviya
+
