@@ -31,10 +31,10 @@ while cap.isOpened():
                     cv2.circle(frame,(x,y),1,(0,255,0),-1)
 
 
-        cv2.imshow('SilentCue - Face Landmarks', frame)
+        cv2.imshow('SilentCue - Face Landmarks', frame)                         # Showing Result
 
 
-        if cv2.waitKey(1) & 0xFF == 27:
+        if cv2.waitKey(1) & 0xFF == 27:                                         # Exit on ESC
                 break
 
 cap.release()
