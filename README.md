@@ -38,7 +38,7 @@ SilentCUE/
 ---
 
 
-🔮 Future Ideas
+## 🔮 Future Ideas
 Browser support via TensorFlow.js
 Mobile app integration
 Add more commands and language support
@@ -46,8 +46,8 @@ Add more commands and language support
 ---
 ## 🚧 Progress So Far
 
-27/05/25
-**Goals**
+27/05/25 
+
 Capturing Phase
 - Set up webcam capture using OpenCV.
 - Integrated MediaPipe Face Mesh to detect 468 facial landmarks in real-time.
@@ -61,7 +61,7 @@ Capturing Phase
 We need only the mouth region to feed into the model — not the full face as that would be waste of resources.
 
 28/05/2025
-**Goals**
+
 Data Collection Phase
 - To detect mouth and face clearly.
 - To save cropped mouth images and label them correctly for words like (Yes, No, Play, Stop, etc.)
